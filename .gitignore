@@ -1,8 +1,8 @@
 # .tfvars files
-*.tfvars
+#*.tfvars
 
 # Exclude for testing stuff.
-*.tfvars
+#*.tfvars
 
 # .tfstate files
 *.tfstate
