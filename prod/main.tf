@@ -26,7 +26,7 @@ locals {
 */
 
 module "resourcegroup" {
-  source              = "./modules/resourcegroup"
+  source              = "../modules/resourcegroup"
   location            = var.location
   env                 = "${var.env}"
   prefix              = "${var.prefix}"
@@ -34,7 +34,7 @@ module "resourcegroup" {
 }
 
 module "appsservices" {
-  source              = "./modules/apps_service"
+  source              = "../modules/apps_service"
   location            = module.resourcegroup.location
   resource_group_name = module.resourcegroup.resource_group_name
   env                 = "${var.env}"
@@ -46,7 +46,7 @@ module "appsservices" {
 }
 
 module "redis" {
-  source              = "./modules/redis"
+  source              = "../modules/redis"
   location            = module.resourcegroup.location
   resource_group_name = module.resourcegroup.resource_group_name
   env                 = "${var.env}"
@@ -59,7 +59,7 @@ module "redis" {
 }
 
 module "postgresql" {
-  source                       = "./modules/postgresql"
+  source                       = "../modules/postgresql"
   location                     = module.resourcegroup.location
   resource_group_name          = module.resourcegroup.resource_group_name
   env                          = "${var.env}"
@@ -74,7 +74,7 @@ module "postgresql" {
 }
 
 module "key_vault" {
-  source                       = "./modules/key_vaults"
+  source                       = "../modules/key_vaults"
   location                     = module.resourcegroup.location
   resource_group_name          = module.resourcegroup.resource_group_name
   env                          = "${var.env}"
