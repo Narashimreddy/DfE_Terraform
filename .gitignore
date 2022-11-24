@@ -1,0 +1,17 @@
+# .tfvars files
+*.tfvars
+
+# Exclude for testing stuff.
+*.tfvars
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Local .terraform directory
+**/.terraform/*
+
+
+# IDE config files
+**/.idea/*
+**/.vscode/*
