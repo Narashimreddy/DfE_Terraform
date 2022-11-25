@@ -69,7 +69,7 @@ resource "azurerm_key_vault" "kv1" {
 
 resource "azurerm_key_vault" "kv2" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}fh-kv-admin"
+  name                        = "${var.prefix}-fh-kv-admin"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -138,7 +138,7 @@ resource "azurerm_key_vault" "kv2" {
 
 resource "azurerm_key_vault" "kv3" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}fh-kv-general"
+  name                        = "${var.prefix}-fh-kv-general"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
