@@ -12,28 +12,21 @@ provider "azurerm" {
   features {}
 }
 
-locals {
-  tags = {
-    "Parent Business"   = "${var.Parent_Business}"
-    "Enviornment"       = "${var.Enviornment}"
-    "Portfolio"         = "${var.Portfolio}"
-    "Service Line"      = "${var.Service_Line}"
-    "Service"           = "${var.Service}"
-	  "Product"           = "${var.Product}"
-  }
-}
-
-
 module "resourcegroup" {
-  source              = "../modules/resourcegroup"
+  source              = "./modules/resourcegroup"
   location            = var.location
   env                 = "${var.env}"
   prefix              = "${var.prefix}"
- # tags                = "local.tags"
+  Parent_Business     = "${var.Parent_Business}"
+  Enviornment         = "${var.Enviornment}"
+  Portfolio           = "${var.Portfolio}"
+  Service_Line        = "${var.Service_Line}"
+  Service             = "${var.Service}"
+	Product             = "${var.Product}"
 }
 
 module "appsservices" {
-  source              = "../modules/apps_service"
+  source              = "./modules/apps_service"
   location            = module.resourcegroup.location
   resource_group_name = module.resourcegroup.resource_group_name
   env                 = "${var.env}"
@@ -41,24 +34,37 @@ module "appsservices" {
   os_type             = "${var.os_type}"
   sku_name            = "${var.sku_name}" 
   dotnet_version      = "${var.dotnet_version}" 
- # tags                = "local.tags"
+  Parent_Business     = "${var.Parent_Business}"
+  Enviornment         = "${var.Enviornment}"
+  Portfolio           = "${var.Portfolio}"
+  Service_Line        = "${var.Service_Line}"
+  Service             = "${var.Service}"
+	Product             = "${var.Product}"
 }
 
+/*
 module "redis" {
-  source              = "../modules/redis"
+  source              = "./modules/redis"
   location            = module.resourcegroup.location
   resource_group_name = module.resourcegroup.resource_group_name
   env                 = "${var.env}"
   prefix              = "${var.prefix}"
+  redisVersion        = "${var.redisVersion}"
   capacity            = "${var.capacity}"
   family              = "${var.family}"
   tier                = "${var.tier}"
   non_ssl_port        = "${var.non_ssl_port}"
-#  tags                = "local.tags"
+  Parent_Business     = "${var.Parent_Business}"
+  Enviornment         = "${var.Enviornment}"
+  Portfolio           = "${var.Portfolio}"
+  Service_Line        = "${var.Service_Line}"
+  Service             = "${var.Service}"
+	Product             = "${var.Product}"
 }
 
+*/
 module "postgresql" {
-  source                       = "../modules/postgresql"
+  source                       = "./modules/postgresql"
   location                     = module.resourcegroup.location
   resource_group_name          = module.resourcegroup.resource_group_name
   env                          = "${var.env}"
@@ -69,14 +75,25 @@ module "postgresql" {
   pg_ver                       = "${var.pg_ver}"
   storage_mb                   = "${var.storage_mb}"
   bkup_ret                     = "${var.bkup_ret}"
- # tags                = "local.tags"
+  Parent_Business     = "${var.Parent_Business}"
+  Enviornment         = "${var.Enviornment}"
+  Portfolio           = "${var.Portfolio}"
+  Service_Line        = "${var.Service_Line}"
+  Service             = "${var.Service}"
+	Product             = "${var.Product}"
 }
 
+
 module "key_vault" {
-  source                       = "../modules/key_vaults"
+  source                       = "./modules/key_vaults"
   location                     = module.resourcegroup.location
   resource_group_name          = module.resourcegroup.resource_group_name
   env                          = "${var.env}"
   prefix                       = "${var.prefix}"
- # tags                = "local.tags"
+  Parent_Business     = "${var.Parent_Business}"
+  Enviornment         = "${var.Enviornment}"
+  Portfolio           = "${var.Portfolio}"
+  Service_Line        = "${var.Service_Line}"
+  Service             = "${var.Service}"
+	Product             = "${var.Product}"
 }

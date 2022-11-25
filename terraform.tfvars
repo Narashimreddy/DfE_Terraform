@@ -21,7 +21,7 @@ non_ssl_port = "false"
 # postgresql configuration
 
 pg_user  = "psqladmin"
-pg_pwd = "H@Sh1CoR3!"
+pg_pwd = ""
 psku_name   = "GP_Gen5_4"
 pg_ver    = "11"
 storage_mb = "5120"

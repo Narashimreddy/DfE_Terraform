@@ -1,8 +1,8 @@
 # Resource Group configuration
 
 env = "dev"
-location = "northeurope"
-prefix = "4001"
+location = "westeurope"
+prefix = "s181p01"
 
 # Apps Service configuration
 
@@ -12,7 +12,8 @@ dotnet_version = "v6.0"
 
 # redis configuration
 
-capacity = "2"
+redisVersion = "6"
+capacity = "1"
 family = "C"
 tier = "Standard"
 non_ssl_port = "false"
@@ -20,7 +21,7 @@ non_ssl_port = "false"
 # postgresql configuration
 
 pg_user  = "psqladmin"
-pg_pwd = "H@Sh1CoR3!"
+pg_pwd = ""
 psku_name   = "GP_Gen5_4"
 pg_ver    = "11"
 storage_mb = "5120"
