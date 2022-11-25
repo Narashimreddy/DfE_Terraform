@@ -17,4 +17,4 @@
 **/.vscode/*
 
 # Exclude the lock.hcl stuff.
-*.lock.hcl
+*.terraform.lock.hcl
