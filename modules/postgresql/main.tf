@@ -1,5 +1,5 @@
 resource "azurerm_postgresql_server" "postgresql" {
-  name                = "${var.prefix}-as-fh-postgresql-${var.env}"
+  name                = "${var.prefix}-as-fh-postgresql"
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.location}"
   administrator_login          = "${var.pg_user}"

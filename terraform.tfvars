@@ -2,7 +2,7 @@
 
 env = "dev"
 location = "westeurope"
-prefix = "s181p01"
+prefix = "s181p01tf"
 
 # Apps Service configuration
 
@@ -21,7 +21,7 @@ non_ssl_port = "false"
 # postgresql configuration
 
 pg_user  = "psqladmin"
-pg_pwd = "****"
+pg_pwd = "psqladmin@12342"
 psku_name   = "GP_Gen5_4"
 pg_ver    = "11"
 storage_mb = "5120"
@@ -36,3 +36,8 @@ Service_Line      = "Newly Onboarded"
 Service           = "Children’s Care"
 Product           = "Growing up Well"
 
+#terraform Storage info
+
+storage_rg        = "storage_rg"
+stg_act           = "terraform1034"
+terraform_cont    = "terraform"
