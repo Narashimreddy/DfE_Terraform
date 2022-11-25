@@ -10,11 +10,17 @@ resource "azurerm_postgresql_server" "postgresql" {
   storage_mb = "${var.storage_mb}"
 
   backup_retention_days        = "${var.bkup_ret}"
-  geo_redundant_backup_enabled = true
+  geo_redundant_backup_enabled = false
   auto_grow_enabled            = true
-
-  public_network_access_enabled    = false
+  public_network_access_enabled    = true
   ssl_enforcement_enabled          = true
-  ssl_minimal_tls_version_enforced = "TLS1_2"
-#  tags     = "${var.tags}"
+  ssl_minimal_tls_version_enforced = "TLSEnforcementDisabled"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }

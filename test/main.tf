@@ -12,7 +12,6 @@ provider "azurerm" {
   features {}
 }
 
-/*
 locals {
   tags = {
     "Parent Business"   = "${var.Parent_Business}"
@@ -23,7 +22,7 @@ locals {
 	  "Product"           = "${var.Product}"
   }
 }
-*/
+
 
 module "resourcegroup" {
   source              = "../modules/resourcegroup"

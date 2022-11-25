@@ -1,6 +1,9 @@
 variable "location" {}
 variable "prefix" {}
 variable "env" {}
-# variable "tags" {
-#     type = map
-# }
+variable "Parent_Business" {}
+variable "Enviornment" {}
+variable "Portfolio" {}
+variable "Service_Line" {}
+variable "Service" {}
+variable "Product" {}

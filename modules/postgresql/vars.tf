@@ -8,4 +8,9 @@ variable "pg_ver" {}
 variable "storage_mb" {}
 variable "bkup_ret" {}
 variable "resource_group_name" {}
-# variable "tags" {}
+variable "Parent_Business" {}
+variable "Enviornment" {}
+variable "Portfolio" {}
+variable "Service_Line" {}
+variable "Service" {}
+variable "Product" {}

@@ -2,8 +2,14 @@ variable "location" {}
 variable "resource_group_name" {}
 variable "prefix" {}
 variable "env" {}
+variable "redisVersion" {}
 variable "capacity" {}
 variable "family" {}
 variable "tier" {}
 variable "non_ssl_port" {}
-# variable "tags" {}
+variable "Parent_Business" {}
+variable "Enviornment" {}
+variable "Portfolio" {}
+variable "Service_Line" {}
+variable "Service" {}
+variable "Product" {}

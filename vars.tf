@@ -4,6 +4,7 @@ variable "env" {}
 variable "os_type" {}
 variable "sku_name" {}
 variable "dotnet_version" {}
+variable "redisVersion" {}
 variable "capacity" {}
 variable "family" {}
 variable "tier" {}

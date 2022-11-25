@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 resource "azurerm_key_vault" "kv1" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}-kv-fh"
+  name                        = "${var.prefix}-fh-kv"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -12,25 +12,64 @@ resource "azurerm_key_vault" "kv1" {
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
-    key_permissions = [
-      "Get",
-    ]
+          certificate_permissions = [
+            "Create",
+            "Delete",
+            "DeleteIssuers",
+            "Get",
+            "GetIssuers",
+            "Import",
+            "List",
+            "ListIssuers",
+            "ManageContacts",
+            "ManageIssuers",
+            "SetIssuers",
+            "Update",
+          ]
 
-    secret_permissions = [
-      "Get",
-    ]
+          key_permissions = [
+            "Backup",
+            "Create",
+            "Decrypt",
+            "Delete",
+            "Encrypt",
+            "Get",
+            "Import",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Sign",
+            "UnwrapKey",
+            "Update",
+            "Verify",
+            "WrapKey",
+          ]
 
-    storage_permissions = [
-      "Get",
-    ]
+          secret_permissions = [
+            "Backup",
+            "Delete",
+            "Get",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Set",
+          ]
   }
- # tags     = "${var.tags}"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }
-
 
 resource "azurerm_key_vault" "kv2" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}-kv-fh-admin"
+  name                        = "${var.prefix}fh-kv-admin"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -41,25 +80,65 @@ resource "azurerm_key_vault" "kv2" {
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
-    key_permissions = [
-      "Get",
-    ]
+    certificate_permissions = [
+            "Create",
+            "Delete",
+            "DeleteIssuers",
+            "Get",
+            "GetIssuers",
+            "Import",
+            "List",
+            "ListIssuers",
+            "ManageContacts",
+            "ManageIssuers",
+            "SetIssuers",
+            "Update",
+          ]
 
-    secret_permissions = [
-      "Get",
-    ]
+          key_permissions = [
+            "Backup",
+            "Create",
+            "Decrypt",
+            "Delete",
+            "Encrypt",
+            "Get",
+            "Import",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Sign",
+            "UnwrapKey",
+            "Update",
+            "Verify",
+            "WrapKey",
+          ]
 
-    storage_permissions = [
-      "Get",
-    ]
+          secret_permissions = [
+            "Backup",
+            "Delete",
+            "Get",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Set",
+          ]
   }
-#  tags     = "${var.tags}"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }
 
 
 resource "azurerm_key_vault" "kv3" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}-kv-fh-general"
+  name                        = "${var.prefix}fh-kv-general"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -70,26 +149,66 @@ resource "azurerm_key_vault" "kv3" {
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
-    key_permissions = [
-      "Get",
-    ]
+    certificate_permissions = [
+            "Create",
+            "Delete",
+            "DeleteIssuers",
+            "Get",
+            "GetIssuers",
+            "Import",
+            "List",
+            "ListIssuers",
+            "ManageContacts",
+            "ManageIssuers",
+            "SetIssuers",
+            "Update",
+          ]
 
-    secret_permissions = [
-      "Get",
-    ]
+          key_permissions = [
+            "Backup",
+            "Create",
+            "Decrypt",
+            "Delete",
+            "Encrypt",
+            "Get",
+            "Import",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Sign",
+            "UnwrapKey",
+            "Update",
+            "Verify",
+            "WrapKey",
+          ]
 
-    storage_permissions = [
-      "Get",
-    ]
+          secret_permissions = [
+            "Backup",
+            "Delete",
+            "Get",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Set",
+          ]
   }
-#  tags     = "${var.tags}"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }
 
 
 
 resource "azurerm_key_vault" "kv4" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}-kv-fh-referral"
+  name                        = "${var.prefix}-fh-kv-referral"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -100,25 +219,65 @@ resource "azurerm_key_vault" "kv4" {
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
-    key_permissions = [
-      "Get",
-    ]
+    certificate_permissions = [
+            "Create",
+            "Delete",
+            "DeleteIssuers",
+            "Get",
+            "GetIssuers",
+            "Import",
+            "List",
+            "ListIssuers",
+            "ManageContacts",
+            "ManageIssuers",
+            "SetIssuers",
+            "Update",
+          ]
 
-    secret_permissions = [
-      "Get",
-    ]
+          key_permissions = [
+            "Backup",
+            "Create",
+            "Decrypt",
+            "Delete",
+            "Encrypt",
+            "Get",
+            "Import",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Sign",
+            "UnwrapKey",
+            "Update",
+            "Verify",
+            "WrapKey",
+          ]
 
-    storage_permissions = [
-      "Get",
-    ]
+          secret_permissions = [
+            "Backup",
+            "Delete",
+            "Get",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Set",
+          ]
   }
- # tags     = "${var.tags}"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }
 
 
 resource "azurerm_key_vault" "kv5" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}-kv-fh-servdir"
+  name                        = "${var.prefix}-fh-kv-servdir"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -129,25 +288,65 @@ resource "azurerm_key_vault" "kv5" {
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
-    key_permissions = [
-      "Get",
-    ]
+    certificate_permissions = [
+            "Create",
+            "Delete",
+            "DeleteIssuers",
+            "Get",
+            "GetIssuers",
+            "Import",
+            "List",
+            "ListIssuers",
+            "ManageContacts",
+            "ManageIssuers",
+            "SetIssuers",
+            "Update",
+          ]
 
-    secret_permissions = [
-      "Get",
-    ]
+          key_permissions = [
+            "Backup",
+            "Create",
+            "Decrypt",
+            "Delete",
+            "Encrypt",
+            "Get",
+            "Import",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Sign",
+            "UnwrapKey",
+            "Update",
+            "Verify",
+            "WrapKey",
+          ]
 
-    storage_permissions = [
-      "Get",
-    ]
+          secret_permissions = [
+            "Backup",
+            "Delete",
+            "Get",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Set",
+          ]
   }
-#  tags     = "${var.tags}"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }
 
 
 resource "azurerm_key_vault" "kv6" {
   depends_on = [ var.resource_group_name]
-  name                        = "${var.prefix}-kv-fh-userserv"
+  name                        = "${var.prefix}-fh-kv-userserv"
   resource_group_name         = "${var.resource_group_name}"
   location                    = "${var.location}"
   enabled_for_disk_encryption = true
@@ -158,17 +357,57 @@ resource "azurerm_key_vault" "kv6" {
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
-    key_permissions = [
-      "Get",
-    ]
+certificate_permissions = [
+            "Create",
+            "Delete",
+            "DeleteIssuers",
+            "Get",
+            "GetIssuers",
+            "Import",
+            "List",
+            "ListIssuers",
+            "ManageContacts",
+            "ManageIssuers",
+            "SetIssuers",
+            "Update",
+          ]
 
-    secret_permissions = [
-      "Get",
-    ]
+          key_permissions = [
+            "Backup",
+            "Create",
+            "Decrypt",
+            "Delete",
+            "Encrypt",
+            "Get",
+            "Import",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Sign",
+            "UnwrapKey",
+            "Update",
+            "Verify",
+            "WrapKey",
+          ]
 
-    storage_permissions = [
-      "Get",
-    ]
+          secret_permissions = [
+            "Backup",
+            "Delete",
+            "Get",
+            "List",
+            "Purge",
+            "Recover",
+            "Restore",
+            "Set",
+          ]
   }
-#   tags     = "${var.tags}"
+   tags = {
+    "Parent Business"   = "${var.Parent_Business}"
+    "Enviornment"       = "${var.Enviornment}"
+    "Portfolio"         = "${var.Portfolio}"
+    "Service Line"      = "${var.Service_Line}"
+    "Service"           = "${var.Service}"
+	  "Product"           = "${var.Product}"
+  }
 }

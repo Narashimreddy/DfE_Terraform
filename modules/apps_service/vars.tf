@@ -5,4 +5,9 @@ variable "env" {}
 variable "os_type" {}
 variable "sku_name" {}
 variable "dotnet_version" {}
-# variable "tags" {}
+variable "Parent_Business" {}
+variable "Enviornment" {}
+variable "Portfolio" {}
+variable "Service_Line" {}
+variable "Service" {}
+variable "Product" {}
