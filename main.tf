@@ -42,7 +42,7 @@ module "appsservices" {
 	Product             = "${var.Product}"
 }
 
-/*
+
 module "redis" {
   source              = "./modules/redis"
   location            = module.resourcegroup.location
@@ -62,7 +62,7 @@ module "redis" {
 	Product             = "${var.Product}"
 }
 
-*/
+
 module "postgresql" {
   source                       = "./modules/postgresql"
   location                     = module.resourcegroup.location
