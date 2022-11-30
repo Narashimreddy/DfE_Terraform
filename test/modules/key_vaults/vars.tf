@@ -1,0 +1,10 @@
+variable "location" {}
+variable "prefix" {}
+variable "env" {}
+variable "resource_group_name" {}
+variable "Parent_Business" {}
+variable "Enviornment" {}
+variable "Portfolio" {}
+variable "Service_Line" {}
+variable "Service" {}
+variable "Product" {}

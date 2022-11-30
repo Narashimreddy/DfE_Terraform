@@ -21,3 +21,6 @@ variable "Portfolio" {}
 variable "Service_Line" {}
 variable "Service" {}
 variable "Product" {}
+variable "storage_rg" {}
+variable "stg_act" {}
+variable "terraform_cont" {}

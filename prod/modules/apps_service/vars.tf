@@ -1,0 +1,13 @@
+variable "location" {}
+variable "resource_group_name" {}
+variable "prefix" {}
+variable "env" {}
+variable "os_type" {}
+variable "sku_name" {}
+variable "dotnet_version" {}
+variable "Parent_Business" {}
+variable "Enviornment" {}
+variable "Portfolio" {}
+variable "Service_Line" {}
+variable "Service" {}
+variable "Product" {}

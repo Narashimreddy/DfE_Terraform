@@ -12,6 +12,15 @@ provider "azurerm" {
   features {}
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name      = "storage_rg"
+    storage_account_name     = "terraform1034"
+    container_name           = "terraform"
+    key                      = "terraform-Dev.tfstate"
+  }
+}
+ 
 module "resourcegroup" {
   source              = "./modules/resourcegroup"
   location            = var.location
