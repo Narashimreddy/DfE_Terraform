@@ -4,6 +4,14 @@ env = "dev"
 location = "westeurope"
 prefix = "s181p01tf"
 
+# Vnet and Subnet configuration
+
+vnet_address_space = ""
+ag_address_space = ""
+redis_address_space = ""
+pgsql_address_space = ""
+pvtendpt_address_space = ""
+
 # Apps Service configuration
 
 os_type = "Windows"
