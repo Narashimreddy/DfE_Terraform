@@ -6,11 +6,12 @@ prefix = "s181p01tf"
 
 # Vnet and Subnet configuration
 
-vnet_address_space = ""
-ag_address_space = ""
-redis_address_space = ""
-pgsql_address_space = ""
-pvtendpt_address_space = ""
+vnet_address_space = "10.0.0.0/25"
+ag_address_space = "10.0.0.32/27"
+redis_address_space = "10.0.0.0/28"
+pgsql_address_space = "10.0.0.16/28"
+pvtendpt_address_space = "10.0.0.64/28"
+
 
 # Apps Service configuration
 
@@ -44,7 +45,7 @@ Service_Line      = "Newly Onboarded"
 Service           = "Children’s Care"
 Product           = "Growing up Well"
 
-#terraform Storage info
+
 
 storage_rg        = "storage_rg"
 stg_act           = "terraform1034"

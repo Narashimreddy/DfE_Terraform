@@ -12,6 +12,7 @@ provider "azurerm" {
   features {}
 }
 
+/*
 terraform {
   backend "azurerm" {
     resource_group_name      = "storage_rg"
@@ -20,10 +21,10 @@ terraform {
     key                      = "terraform-Dev.tfstate"
   }
 }
- 
+*/ 
 module "resourcegroup" {
   source              = "./modules/resourcegroup"
-  location            = var.location
+  location            = "${var.location}"
   env                 = "${var.env}"
   prefix              = "${var.prefix}"
   Parent_Business     = "${var.Parent_Business}"
@@ -34,6 +35,28 @@ module "resourcegroup" {
 	Product             = "${var.Product}"
 }
 
+module "vnet" {
+  source              = "./modules/vnet"
+  location            = module.resourcegroup.location
+  resource_group_name = module.resourcegroup.resource_group_name
+  ag_address_space        = "${var.ag_address_space}"
+  redis_address_space        = "${var.redis_address_space}"
+  pgsql_address_space        = "${var.pgsql_address_space}"
+  pvtendpt_address_space        = "${var.pvtendpt_address_space}"
+  env                 = "${var.env}"
+  prefix              = "${var.prefix}"
+  os_type             = "${var.os_type}"
+  sku_name            = "${var.sku_name}" 
+  dotnet_version      = "${var.dotnet_version}" 
+  Parent_Business     = "${var.Parent_Business}"
+  Enviornment         = "${var.Enviornment}"
+  Portfolio           = "${var.Portfolio}"
+  Service_Line        = "${var.Service_Line}"
+  Service             = "${var.Service}"
+	Product             = "${var.Product}"
+}
+
+/*
 module "appsservices" {
   source              = "./modules/apps_service"
   location            = module.resourcegroup.location
@@ -106,3 +129,5 @@ module "key_vault" {
   Service             = "${var.Service}"
 	Product             = "${var.Product}"
 }
+
+*/
