@@ -21,6 +21,11 @@ variable "Portfolio" {}
 variable "Service_Line" {}
 variable "Service" {}
 variable "Product" {}
-variable "storage_rg" {}
-variable "stg_act" {}
-variable "terraform_cont" {}
+#variable "storage_rg" {}
+#variable "stg_act" {}
+#variable "terraform_cont" {}
+variable "vnet_address_space" {}
+variable "ag_address_space" {}
+variable "redis_address_space" {}
+variable "pgsql_address_space" {}
+variable "pvtendpt_address_space" {}

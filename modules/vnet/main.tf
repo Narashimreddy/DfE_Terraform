@@ -14,12 +14,13 @@ resource "azurerm_virtual_network" "vnet" {
   }
 }
 
-# Resource-1: Create Postgresql Subnet
+# Resource-1: Create ApplicationGateway Subnet
 resource "azurerm_subnet" "ApplicationGateway" {
   name                 = "${var.prefix}-ag-sn"
   address_space        = "${var.ag_address_space}"
   resource_group_name  = "${var.resource_group_name}"
   location             = "${var.location}"
+  virtual_network_name = "azurerm_virtual_network.vnet.name"
      tags = {
         "Parent Business"   = "${var.Parent_Business}"
         "Enviornment"       = "${var.Enviornment}"
@@ -36,6 +37,7 @@ resource "azurerm_subnet" "redis" {
   address_space        = "${var.redis_address_space}"
   resource_group_name  = "${var.resource_group_name}"
   location             = "${var.location}"
+  virtual_network_name = "azurerm_virtual_network.vnet.name"
      tags = {
         "Parent Business"   = "${var.Parent_Business}"
         "Enviornment"       = "${var.Enviornment}"
@@ -52,6 +54,7 @@ resource "azurerm_subnet" "pgsql" {
   address_space        = "${var.pgsql_address_space}"
   resource_group_name  = "${var.resource_group_name}"
   location             = "${var.location}"
+    virtual_network_name = "azurerm_virtual_network.vnet.name"
      tags = {
         "Parent Business"   = "${var.Parent_Business}"
         "Enviornment"       = "${var.Enviornment}"
@@ -68,6 +71,7 @@ resource "azurerm_subnet" "pvtendpoint" {
   address_space        = "${var.pvtendpt_address_space}"
   resource_group_name  = "${var.resource_group_name}"
   location             = "${var.location}"
+  virtual_network_name = "azurerm_virtual_network.vnet.name"
      tags = {
         "Parent Business"   = "${var.Parent_Business}"
         "Enviornment"       = "${var.Enviornment}"

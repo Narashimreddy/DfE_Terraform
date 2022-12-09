@@ -2,7 +2,7 @@
 
 env = "dev"
 location = "westeurope"
-prefix = "s181p01tf"
+prefix = "s181d01tf"
 
 # Vnet and Subnet configuration
 
@@ -47,6 +47,6 @@ Product           = "Growing up Well"
 
 
 
-storage_rg        = "storage_rg"
-stg_act           = "terraform1034"
-terraform_cont    = "terraform"
+#storage_rg        = "storage_rg"
+#stg_act           = "terraform1034"
+#terraform_cont    = "terraform"

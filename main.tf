@@ -39,15 +39,13 @@ module "vnet" {
   source              = "./modules/vnet"
   location            = module.resourcegroup.location
   resource_group_name = module.resourcegroup.resource_group_name
+  vnet_address_space   = "${var.vnet_address_space}"
   ag_address_space        = "${var.ag_address_space}"
   redis_address_space        = "${var.redis_address_space}"
   pgsql_address_space        = "${var.pgsql_address_space}"
   pvtendpt_address_space        = "${var.pvtendpt_address_space}"
   env                 = "${var.env}"
   prefix              = "${var.prefix}"
-  os_type             = "${var.os_type}"
-  sku_name            = "${var.sku_name}" 
-  dotnet_version      = "${var.dotnet_version}" 
   Parent_Business     = "${var.Parent_Business}"
   Enviornment         = "${var.Enviornment}"
   Portfolio           = "${var.Portfolio}"
@@ -73,7 +71,6 @@ module "appsservices" {
   Service             = "${var.Service}"
 	Product             = "${var.Product}"
 }
-
 
 module "redis" {
   source              = "./modules/redis"
